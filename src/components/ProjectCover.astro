@@ -1,0 +1,66 @@
+---
+interface Props {
+  id: string
+  image?: string
+  title: string
+}
+
+const { id, image, title } = Astro.props
+---
+
+{
+  id === "videogames" && image ? (
+    <img
+      src={image}
+      alt={title}
+      width="960"
+      height="600"
+      class="aspect-[16/10] h-auto w-full border border-border object-cover object-top"
+    />
+  ) : id === "hogar" ? (
+    <div class="aspect-[16/10] border border-border bg-card p-4" aria-hidden="true">
+      <div class="flex h-full flex-col border border-border bg-background p-4">
+        <p class="font-display text-base text-primary">Hogar Felino</p>
+        <p class="font-meta mt-1 text-xs text-muted-foreground">Adopción y cuidado</p>
+        <div class="mt-4 grid min-h-0 flex-1 grid-cols-3 gap-2">
+          <div class="flex flex-col items-center justify-center border border-border bg-card">
+            <span class="size-8 rounded-full border-2 border-primary bg-primary/15" />
+            <span class="font-meta mt-2 text-xs">Mila</span>
+          </div>
+          <div class="flex flex-col items-center justify-center border border-border bg-card">
+            <span class="size-8 rounded-full border-2 border-muted-foreground bg-muted" />
+            <span class="font-meta mt-2 text-xs">Nube</span>
+          </div>
+          <div class="flex flex-col justify-center gap-2 border border-border bg-card px-2">
+            <span class="font-meta bg-muted px-2 py-1 text-[10px]">12 gatos</span>
+            <span class="font-meta bg-muted px-2 py-1 text-[10px]">4 adopciones</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div class="aspect-[16/10] border border-border bg-card p-4" aria-hidden="true">
+      <div class="flex h-full flex-col border border-border bg-background p-4">
+        <p class="font-display text-base text-primary">Incidencias</p>
+        <p class="font-meta mt-1 text-xs text-muted-foreground">Cola de tickets</p>
+        <div class="mt-4 space-y-2">
+          <div class="font-meta flex items-center justify-between border border-border bg-card px-3 py-2 text-xs">
+            <span class="font-nums text-primary">#104</span>
+            <span>Impresora planta 2</span>
+            <span class="border border-primary px-1.5 py-0.5 text-[10px] text-primary">abierta</span>
+          </div>
+          <div class="font-meta flex items-center justify-between border border-border bg-card px-3 py-2 text-xs">
+            <span class="font-nums text-primary">#101</span>
+            <span>VPN sin conexión</span>
+            <span class="border border-border px-1.5 py-0.5 text-[10px] text-muted-foreground">en curso</span>
+          </div>
+          <div class="font-meta flex items-center justify-between border border-border bg-card px-3 py-2 text-xs">
+            <span class="font-nums text-primary">#098</span>
+            <span>Alta de usuario</span>
+            <span class="border border-border px-1.5 py-0.5 text-[10px] text-muted-foreground">cerrada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

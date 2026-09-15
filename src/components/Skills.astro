@@ -1,0 +1,28 @@
+---
+import { profile, type Locale, type SkillGroup } from "@/data/profile"
+import { getDictionary } from "@/i18n"
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getDictionary(locale)
+const groups = Object.keys(profile.skills) as SkillGroup[]
+---
+
+<section id="skills" class="section-rail">
+  <h2 class="section-label">{t.sections.skills}</h2>
+  <div class="border-t border-border">
+    {
+      groups.map((group) => (
+        <div class="grid gap-2 border-b border-border py-5 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-8">
+          <p class="font-meta text-sm text-muted-foreground">{t.skillGroups[group]}</p>
+          <p class="text-sm leading-relaxed text-foreground">
+            {profile.skills[group].join(", ")}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</section>

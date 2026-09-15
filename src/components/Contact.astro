@@ -1,0 +1,29 @@
+---
+import { Mail } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { profile, type Locale } from "@/data/profile"
+import { getDictionary } from "@/i18n"
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getDictionary(locale)
+---
+
+<section id="contacto" class="section-rail">
+  <h2 class="section-label">{t.sections.contact}</h2>
+  <div class="border-t border-border pt-6">
+    <p class="max-w-xl text-sm leading-relaxed text-muted-foreground">{t.contact.lead}</p>
+    <div class="mt-5">
+      <Button asChild className="rounded-md px-4">
+        <a href={`mailto:${profile.email}`} aria-label={t.contactAria}>
+          <Mail data-icon="inline-start" />
+          {t.contact.button}
+        </a>
+      </Button>
+    </div>
+    <p class="font-meta mt-3 text-sm text-muted-foreground">{profile.email}</p>
+  </div>
+</section>

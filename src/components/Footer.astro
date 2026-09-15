@@ -1,0 +1,17 @@
+---
+import type { Locale } from "@/data/profile"
+import { getDictionary } from "@/i18n"
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getDictionary(locale)
+const year = new Date().getFullYear()
+---
+
+<footer class="mt-4 flex flex-col gap-2 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
+  <p class="font-meta text-sm text-muted-foreground">{t.footer}</p>
+  <p class="font-meta font-nums text-sm text-muted-foreground">{year}</p>
+</footer>

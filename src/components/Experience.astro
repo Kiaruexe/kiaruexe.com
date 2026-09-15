@@ -1,0 +1,60 @@
+---
+import { Badge } from "@/components/ui/badge"
+import { profile, type Locale } from "@/data/profile"
+import { getDictionary } from "@/i18n"
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getDictionary(locale)
+---
+
+<section id="experiencia" class="section-rail">
+  <h2 class="section-label">{t.sections.experience}</h2>
+  <ol class="border-t border-border">
+    {
+      profile.jobs.map((job) => {
+        const copy = t.jobs[job.id]
+        const CompanyTag = job.href ? "a" : "span"
+        return (
+          <li class="grid gap-2 border-b border-border py-6 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-8">
+            <p class="font-meta font-nums text-sm text-muted-foreground">
+              {job.start}
+              <br />
+              {job.end}
+            </p>
+            <div>
+              <h3 class="font-display text-lg leading-tight">{copy.role}</h3>
+              <p class="font-meta mt-1 text-sm text-muted-foreground">
+                <CompanyTag
+                  href={job.href}
+                  target={job.href ? "_blank" : undefined}
+                  rel={job.href ? "noreferrer" : undefined}
+                  class={job.href ? "text-foreground hover:text-primary" : undefined}
+                >
+                  {copy.company}
+                </CompanyTag>
+                <span class="mx-2 text-border">/</span>
+                {copy.mode}
+              </p>
+              <p class="mt-3 max-w-2xl text-sm leading-relaxed text-foreground/90">{copy.body}</p>
+              {job.stack.length > 0 ? (
+                <ul class="mt-3 flex flex-wrap gap-1.5">
+                  {job.stack.map((tech) => (
+                    <li>
+                      <Badge variant="outline" className="rounded-sm font-meta">
+                        {tech}
+                      </Badge>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+          </li>
+        )
+      })
+    }
+  </ol>
+</section>

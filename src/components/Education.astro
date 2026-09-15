@@ -1,0 +1,35 @@
+---
+import { profile, type Locale } from "@/data/profile"
+import { getDictionary } from "@/i18n"
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getDictionary(locale)
+---
+
+<section id="formacion" class="section-rail">
+  <h2 class="section-label">{t.sections.education}</h2>
+  <ol class="border-t border-border">
+    {
+      profile.education.map((item) => {
+        const copy = t.education[item.id]
+        return (
+          <li class="grid gap-2 border-b border-border py-6 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-8">
+            <p class="font-meta font-nums text-sm text-muted-foreground">
+              {item.start}
+              <br />
+              {item.end}
+            </p>
+            <div>
+              <h3 class="font-display text-lg leading-tight">{copy.title}</h3>
+              <p class="font-meta mt-1 text-sm text-muted-foreground">{copy.school}</p>
+            </div>
+          </li>
+        )
+      })
+    }
+  </ol>
+</section>

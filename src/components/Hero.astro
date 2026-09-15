@@ -1,0 +1,26 @@
+---
+import { HeroBlock } from "@/components/HeroBlock"
+import { profile, type Locale } from "@/data/profile"
+import { getDictionary } from "@/i18n"
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getDictionary(locale)
+---
+
+<HeroBlock
+  title={t.hero.title}
+  subtitle={t.hero.subtitle}
+  contact={t.hero.contact}
+  contactAria={t.contactAria}
+  availableLabel={t.hero.available}
+  available={profile.available}
+  email={profile.email}
+  photo={profile.photo}
+  name={profile.fullName}
+  linkedin={profile.linkedin}
+  github={profile.github}
+/>

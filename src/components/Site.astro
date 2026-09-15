@@ -1,0 +1,30 @@
+---
+import Education from "@/components/Education.astro"
+import Experience from "@/components/Experience.astro"
+import Footer from "@/components/Footer.astro"
+import Header from "@/components/Header.astro"
+import Hero from "@/components/Hero.astro"
+import About from "@/components/About.astro"
+import Contact from "@/components/Contact.astro"
+import Projects from "@/components/Projects.astro"
+import Skills from "@/components/Skills.astro"
+import type { Locale } from "@/data/profile"
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+---
+
+<div class="site-shell mx-auto flex w-full max-w-5xl flex-col gap-14 px-5 py-6 sm:px-8 sm:py-10 sm:gap-20">
+  <Header locale={locale} />
+  <Hero locale={locale} />
+  <Projects locale={locale} />
+  <Experience locale={locale} />
+  <Education locale={locale} />
+  <Skills locale={locale} />
+  <About locale={locale} />
+  <Contact locale={locale} />
+  <Footer locale={locale} />
+</div>
