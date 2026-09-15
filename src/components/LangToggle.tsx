@@ -1,5 +1,6 @@
 import type { Locale } from "@/data/profile"
 import { localePath } from "@/i18n"
+import { Button } from "@/components/ui/button"
 
 export function LangToggle({
   locale,
@@ -18,13 +19,14 @@ export function LangToggle({
   const nextName = next === "en" ? enLabel : esLabel
 
   return (
-    <a
-      href={href}
-      hrefLang={next}
-      aria-label={`${currentLabel}: ${nextName}`}
-      className="font-meta inline-flex h-8 items-center rounded-md px-2.5 text-xs text-muted-foreground hover:text-foreground"
+    <Button
+      asChild
+      variant="ghost"
+      className="font-meta h-8 rounded-md px-2.5 text-xs text-muted-foreground hover:text-foreground"
     >
-      {label}
-    </a>
+      <a href={href} hrefLang={next} aria-label={`${currentLabel}: ${nextName}`}>
+        {label}
+      </a>
+    </Button>
   )
 }

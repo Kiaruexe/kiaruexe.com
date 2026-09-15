@@ -10,7 +10,7 @@ export const profile = {
     {
       id: "videogames",
       repo: "https://github.com/Kiaruexe/videogames",
-      demo: undefined as string | undefined,
+      demo: "https://videogame-gamma.vercel.app/",
       image: "/projects/videogames.png" as string | undefined,
       stack: ["JavaScript", "HTML", "CSV"],
     },
