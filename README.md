@@ -6,5 +6,3 @@ Portfolio de Isabel Espejo. Sitio one-page en Astro + React + Tailwind.
 - English: `/en`
 
 Licencia: [GNU GPL v3](LICENSE).
-
-

@@ -1,4 +1,5 @@
 ---
+import { Separator } from "@/components/ui/separator"
 import { profile, type Locale } from "@/data/profile"
 import { getDictionary } from "@/i18n"
 
@@ -12,7 +13,9 @@ const t = getDictionary(locale)
 
 <section id="formacion" class="section-rail">
   <h2 class="section-label">{t.sections.education}</h2>
-  <ol class="border-t border-border">
+  <div>
+    <Separator />
+    <ol>
     {
       profile.education.map((item) => {
         const copy = t.education[item.id]
@@ -31,5 +34,6 @@ const t = getDictionary(locale)
         )
       })
     }
-  </ol>
+    </ol>
+  </div>
 </section>

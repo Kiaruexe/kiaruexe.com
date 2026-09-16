@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 
 export function HeroBlock({
@@ -11,6 +12,7 @@ export function HeroBlock({
   email,
   photo,
   name,
+  initials,
   linkedin,
   github,
 }: {
@@ -23,18 +25,18 @@ export function HeroBlock({
   email: string
   photo: string
   name: string
+  initials: string
   linkedin: string
   github: string
 }) {
   return (
     <section className="hero-in flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-12">
-      <img
-        src={photo}
-        alt={name}
-        width={160}
-        height={160}
-        className="size-36 shrink-0 overflow-hidden rounded-full object-cover object-top sm:size-40"
-      />
+      <Avatar className="size-36 shrink-0 sm:size-40">
+        <AvatarImage src={photo} alt={name} width={160} height={160} className="object-top" />
+        <AvatarFallback delayMs={500} className="font-display text-2xl text-foreground">
+          {initials}
+        </AvatarFallback>
+      </Avatar>
 
       <div className="min-w-0">
         <h1 className="font-display text-3xl leading-[1.12] text-foreground sm:text-4xl">

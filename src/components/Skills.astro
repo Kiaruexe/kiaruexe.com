@@ -1,4 +1,5 @@
 ---
+import { Separator } from "@/components/ui/separator"
 import { profile, type Locale, type SkillGroup } from "@/data/profile"
 import { getDictionary } from "@/i18n"
 
@@ -13,7 +14,8 @@ const groups = Object.keys(profile.skills) as SkillGroup[]
 
 <section id="skills" class="section-rail">
   <h2 class="section-label">{t.sections.skills}</h2>
-  <div class="border-t border-border">
+  <div>
+    <Separator />
     {
       groups.map((group) => (
         <div class="grid gap-2 border-b border-border py-5 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-8">

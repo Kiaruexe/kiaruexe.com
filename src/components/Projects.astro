@@ -2,7 +2,8 @@
 import { Code, ExternalLink } from "lucide-react"
 import ProjectCover from "@/components/ProjectCover.astro"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
 import { profile, type Locale } from "@/data/profile"
 import { getDictionary } from "@/i18n"
 
@@ -12,11 +13,17 @@ interface Props {
 
 const { locale } = Astro.props
 const t = getDictionary(locale)
+const iconLink = buttonVariants({
+  variant: "ghost",
+  size: "icon",
+  className: "text-muted-foreground hover:text-primary",
+})
 ---
 
 <section id="proyectos" class="section-rail">
   <h2 class="section-label">{t.sections.projects}</h2>
-  <div class="grid gap-0 border-t border-border">
+  <div>
+    <Separator />
     {
       profile.projects.map((project) => {
         const copy = t.projects[project.id]
@@ -28,37 +35,25 @@ const t = getDictionary(locale)
                 <div class="flex items-start justify-between gap-3">
                   <h3 class="font-display text-lg leading-tight">{copy.title}</h3>
                   <div class="flex shrink-0 items-center gap-1">
-                    <Button
-                      asChild
-                      variant="ghost"
-                      size="icon"
-                      className="size-8 text-muted-foreground hover:text-primary"
+                    <a
+                      href={project.repo}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${t.repo}: ${copy.title}`}
+                      class={iconLink}
                     >
+                      <Code className="size-4" />
+                    </a>
+                    {project.demo ? (
                       <a
-                        href={project.repo}
+                        href={project.demo}
                         target="_blank"
                         rel="noreferrer"
-                        aria-label={`${t.repo}: ${copy.title}`}
+                        aria-label={`${t.demo}: ${copy.title}`}
+                        class={iconLink}
                       >
-                        <Code className="size-4" />
+                        <ExternalLink className="size-4" />
                       </a>
-                    </Button>
-                    {project.demo ? (
-                      <Button
-                        asChild
-                        variant="ghost"
-                        size="icon"
-                        className="size-8 text-muted-foreground hover:text-primary"
-                      >
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noreferrer"
-                          aria-label={`${t.demo}: ${copy.title}`}
-                        >
-                          <ExternalLink className="size-4" />
-                        </a>
-                      </Button>
                     ) : null}
                   </div>
                 </div>

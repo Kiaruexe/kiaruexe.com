@@ -9,9 +9,14 @@ interface Props {
 
 const { locale } = Astro.props
 const t = getDictionary(locale)
+const initials = profile.name
+  .split(" ")
+  .map((part) => part[0])
+  .join("")
 ---
 
 <HeroBlock
+  client:load
   title={t.hero.title}
   subtitle={t.hero.subtitle}
   contact={t.hero.contact}
@@ -21,6 +26,7 @@ const t = getDictionary(locale)
   email={profile.email}
   photo={profile.photo}
   name={profile.fullName}
+  initials={initials}
   linkedin={profile.linkedin}
   github={profile.github}
 />

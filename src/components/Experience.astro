@@ -1,5 +1,6 @@
 ---
 import { Badge } from "@/components/ui/badge"
+import { Separator } from "@/components/ui/separator"
 import { profile, type Locale } from "@/data/profile"
 import { getDictionary } from "@/i18n"
 
@@ -13,7 +14,9 @@ const t = getDictionary(locale)
 
 <section id="experiencia" class="section-rail">
   <h2 class="section-label">{t.sections.experience}</h2>
-  <ol class="border-t border-border">
+  <div>
+    <Separator />
+    <ol>
     {
       profile.jobs.map((job) => {
         const copy = t.jobs[job.id]
@@ -56,5 +59,6 @@ const t = getDictionary(locale)
         )
       })
     }
-  </ol>
+    </ol>
+  </div>
 </section>
