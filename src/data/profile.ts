@@ -65,10 +65,10 @@ export const profile = {
     },
   ],
   skills: {
-    data: ["Python", "SQL", "Excel", "Pandas", "Power BI"],
-    backend: ["PHP", "Laravel", "Node.js", "MySQL"],
     frontend: ["HTML", "CSS", "JavaScript", "TypeScript", "Vue 3", "React"],
+    backend: ["PHP", "Laravel", "Node.js", "MySQL"],
     tools: ["Git", "GitHub", "Linux", "Docker", "Vercel"],
+    data: ["Python", "SQL", "Excel", "Pandas", "Power BI"],
   },
 } as const
 

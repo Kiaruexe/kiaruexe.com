@@ -1,6 +1,6 @@
 # kiaruexe.com
 
-Portfolio de Isabel Espejo. Sitio one-page en Astro + React + Tailwind.
+Portfolio de Isabel Espejo, software developer. Sitio one-page en Astro + React + Tailwind.
 
 - Español: `/`
 - English: `/en`

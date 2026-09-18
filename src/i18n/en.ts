@@ -2,9 +2,9 @@ import type { Dictionary } from "./types"
 
 export const en: Dictionary = {
   htmlLang: "en",
-  metaTitle: "Isabel Espejo — data analyst",
+  metaTitle: "Isabel Espejo — software developer",
   metaDescription:
-    "Data analyst. Dashboards, reports, and apps from real data.",
+    "Software developer. Apps, APIs, and backends that ship and make sense.",
   brand: "isabel",
   contactAria: "Email Isabel",
   lang: {
@@ -25,9 +25,9 @@ export const en: Dictionary = {
     contact: "Contact",
   },
   hero: {
-    title: "Hi, I'm Isabel. Data analyst.",
+    title: "Hi, I'm Isabel. Software developer.",
     subtitle:
-      "I turn messy data into dashboards, reports, and apps that make sense.",
+      "I build web apps end to end. Git, Linux, and Docker are part of the daily work, and I like keeping up.",
     contact: "Contact",
     available: "Open to work",
   },
@@ -40,14 +40,14 @@ export const en: Dictionary = {
     contact: "Contact",
   },
   skillGroups: {
-    data: "Data",
-    backend: "Backend",
     frontend: "Frontend",
+    backend: "Backend",
     tools: "Tools",
+    data: "Data",
   },
   about: {
-    p1: "I started in web development and moved toward data: cleaning, modelling, and saying what matters. Today I combine AI and Big Data training with real analysis and full-stack experience.",
-    p2: "I care about work where the number doesn't stop in a report — it reaches a decision, a dashboard, or an app someone actually uses.",
+    p1: "I studied web development (DAW) and have shipped real apps with Vue, Laravel, and PHP. I work with Git, Linux, and Docker, and I've also done analysis and reports with data.",
+    p2: "I care about work where the code gets used: an app, an API, or a piece of infra. I'm curious and I want to keep specializing, including cloud.",
   },
   contact: {
     lead: "If you have a project or just want to talk, email me.",
