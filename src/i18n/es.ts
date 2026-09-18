@@ -2,9 +2,9 @@ import type { Dictionary } from "./types"
 
 export const es: Dictionary = {
   htmlLang: "es",
-  metaTitle: "Isabel Espejo — analista de datos",
+  metaTitle: "Isabel Espejo — software developer",
   metaDescription:
-    "Analista de datos. Dashboards, informes y apps a partir de datos reales.",
+    "Desarrolladora de software. Apps, APIs y backends que se despliegan y se entienden.",
   brand: "isabel",
   contactAria: "Escribir un correo a Isabel",
   lang: {
@@ -25,9 +25,9 @@ export const es: Dictionary = {
     contact: "Contacto",
   },
   hero: {
-    title: "Hola, soy Isabel. Analista de datos.",
+    title: "Hola, soy Isabel. Desarrolladora de software.",
     subtitle:
-      "Transformo datos desordenados en dashboards, informes y apps que se entienden.",
+      "Construyo aplicaciones web de punta a punta. Git, Linux y Docker van en el día a día, y me gusta seguir aprendiendo.",
     contact: "Contactar",
     available: "Disponible para trabajar",
   },
@@ -40,14 +40,14 @@ export const es: Dictionary = {
     contact: "Contacto",
   },
   skillGroups: {
-    data: "Datos",
-    backend: "Backend",
     frontend: "Frontend",
+    backend: "Backend",
     tools: "Herramientas",
+    data: "Datos",
   },
   about: {
-    p1: "Empecé en desarrollo web y me fui acercando a los datos: limpiar, modelar y contar lo que importa. Hoy combino formación en IA y Big Data con experiencia real en análisis y full stack.",
-    p2: "Me interesa el trabajo donde el número no se queda en un informe: llega a una decisión, a un dashboard o a una app que alguien usa de verdad.",
+    p1: "Estudié DAW y he montado apps reales con Vue, Laravel y PHP. Trabajo con Git, Linux y Docker, y también he hecho análisis e informes con datos.",
+    p2: "Me interesa el trabajo donde el código llega a usarse: una app, una API o una pieza de infra. Tengo curiosidad y ganas de especializarme, también en cloud.",
   },
   contact: {
     lead: "Si tienes un proyecto o quieres hablar, escríbeme.",
